@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "lib_dzne_igblastn"
-version = "0.2.4"
+version = "0.2.5"
 description = "Libary for using igblastn. "
 readme = "README.rst"
 authors = [{ name = "Johannes", email = "johannes-programming@mailfence.com" }]
@@ -16,7 +16,7 @@ classifiers = [
 ]
 keywords = []
 dependencies = [
-    'lib_dzne_tsv>=0.1.4',
+    'simple_tsv>=1.0.0',
     'lib-dzne-filedata>=0.4.4',
 ]
 requires-python = ">=3.11"
