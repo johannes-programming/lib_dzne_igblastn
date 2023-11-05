@@ -4,11 +4,11 @@ build-backend = "setuptools.build_meta"
 
 
 [project]
-name = "lib-dzne-igblastn"
-version = "0.2.2"
+name = "lib_dzne_igblastn"
+version = "0.2.3"
 description = "Libary for using igblastn. "
-license = { file = "LICENSE" }
-authors = [{ name = "Johannes Horler", email = "johannes.horler@dzne.de" }]
+license = { file = "LICENSE.txt" }
+authors = [{ name = "Johannes", email = "johannes-programming@posteo.org" }]
 classifiers = [
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python",
@@ -16,8 +16,11 @@ classifiers = [
 ]
 keywords = []
 dependencies = [
-    'lib-dzne-tsv>=0.1.4',
+    'lib_dzne_tsv>=0.1.4',
     'lib-dzne-filedata>=0.4.4',
 ]
 requires-python = ">=3.11"
+
+[project.urls]
+source = "https://github.com/johannes-programming/lib-dzne-igblastn"
 
