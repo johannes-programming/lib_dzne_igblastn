@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "lib_dzne_igblastn"
-version = "0.2.6"
+version = "0.2.7"
 description = "Libary for using igblastn. "
 readme = "README.rst"
 authors = [{ name = "Johannes", email = "johannes-programming@mailfence.com" }]
@@ -18,9 +18,10 @@ keywords = []
 dependencies = [
     'simple_tsv>=1.0.0',
     'lib-dzne-filedata>=0.4.4',
+    'handle_igblastn>=0.1'
 ]
 requires-python = ">=3.11"
 
 [project.urls]
-source = "https://github.com/johannes-programming/lib_dzne_igblastn"
-
+Source = "https://github.com/johannes-programming/lib_dzne_igblastn"
+Download = "https://pypi.org/project/lib-dzne-igblastn/#files"
