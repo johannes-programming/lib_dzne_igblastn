@@ -6,7 +6,6 @@ import shutil as _shutil
 import tempfile as _tempfile
 
 import lib_dzne_filedata as _fd
-
 import lib_dzne_igblastn._parsers as _prs
 
 
