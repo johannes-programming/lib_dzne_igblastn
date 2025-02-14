@@ -1,8 +1,8 @@
 
-import string as _string
 import os as _os
+import string as _string
+
 import lib_dzne_tsv as _tsv
- 
 
 
 class Parser:

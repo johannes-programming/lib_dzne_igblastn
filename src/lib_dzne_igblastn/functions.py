@@ -1,8 +1,8 @@
 
 
+import contextlib as _contextlib
 import os as _os
 import shutil as _shutil
-import contextlib as _contextlib
 import tempfile as _tempfile
 
 
@@ -39,13 +39,6 @@ def igdata(IGDATA, *, directory):
     _os.environ['IGDATA'] = directory
 
 
-@_contextlib.contextmanager
-def IGDATA(directory):
-    try:
-        predir = os.environ['IGDATA'],
-    except KeyError:
-    with _tempfile.TemporaryDirectory() as tmpdir:
-        
 
 
 
