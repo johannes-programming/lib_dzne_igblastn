@@ -1,2 +1,2 @@
-from lib_dzne_igblastn.functions import *
-from lib_dzne_igblastn.Parser import Parser
+from lib_dzne_igblastn._functions import *
+from lib_dzne_igblastn._parsers import *
