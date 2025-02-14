@@ -23,11 +23,11 @@ class Parser:
         return {
             'no': False,
             'yes': True,
-            'out-of-frame': False,
-            'in-frame': True,
+            'out_of_frame': False,
+            'in_frame': True,
             'off': False,
             'on': True,
-        }[value.lower()]
+        }[value.lower().replace('-', '_')]
     def parse_line(line):
         if line == "":
             return None
@@ -71,8 +71,8 @@ class Parser:
             if ch in (_string.ascii_lowercase + _string.digits):
                 ans += ch
             else:
-                ans += '-'
-        return ans.strip('-')
+                ans += '_'
+        return ans.strip('_')
     def get_header_from_description(description, *, width):
         Parser.check(2 <= width, "A table must have at least two columns! ")
         for ch in [':', '(', ')']:
@@ -135,27 +135,27 @@ class Parser:
         def _get_datatypess():
             return {
                 'rearrangement': {
-                    'top-v-gene-match': str,
-                    'top-d-gene-match': str,
-                    'top-j-gene-match': str,
-                    'chain-type': str,
-                    'stop-codon': Parser.parse_bool,
-                    'v-j-frame': Parser.parse_bool,
+                    'top_v_gene_match': str,
+                    'top_d_gene_match': str,
+                    'top_j_gene_match': str,
+                    'chain_type': str,
+                    'stop_codon': Parser.parse_bool,
+                    'v_j_frame': Parser.parse_bool,
                     'productive': Parser.parse_bool,
                     'strand': str,
-                    'v-frame-shift': Parser.parse_bool,
+                    'v_frame_shift': Parser.parse_bool,
                 },
                 'junction': {
-                    'v-end': str,
-                    'v-d-junction': str,
-                    'd-region': str,
-                    'd-j-junction': str,
-                    'j-start': str,
-                    'v-j-junction': str,
+                    'v_end': str,
+                    'v_d_junction': str,
+                    'd_region': str,
+                    'd_j_junction': str,
+                    'j_start': str,
+                    'v_j_junction': str,
                 },
-                'sub-region': {
+                'sub_region': {
                     None: str,
-                    'nucleotide-sequence': str,
+                    'nucleotide_sequence': str,
                     'translation': str,
                     'start': int,
                     'end': int,
@@ -168,25 +168,25 @@ class Parser:
                     'matches': int,
                     'mismatches': int,
                     'gaps': int,
-                    'percent-identity': float,
+                    'percent_identity': float,
                 },
                 'hit': {
                     None: str,
-                    'query-id': str,
-                    'subject-id': str,
-                    "percent-identity": float,
-                    "alignment-length": int,
+                    'query_id': str,
+                    'subject_id': str,
+                    "percent_identity": float,
+                    "alignment_length": int,
                     "mismatches": int,
-                    "gap-opens": int,
+                    "gap_opens": int,
                     "gaps": int,
-                    "q--start": int,
-                    "q--end": int,
-                    "s--start": int,
-                    "s--end": int,
+                    "q__start": int,
+                    "q__end": int,
+                    "s__start": int,
+                    "s__end": int,
                     "evalue": float,
-                    "bit-score": float,
-                    'query-seq': str,
-                    'subject-seq': str,
+                    "bit_score": float,
+                    'query_seq': str,
+                    'subject_seq': str,
                     'btop': str,
                 },
             }
@@ -217,7 +217,7 @@ class Parser:
                 'hit table',
             ]
             sign, = [s for s in signs if (s in _description)]
-            self._name = sign.split(' ')[0]
+            self._name = sign.split(' ')[0].replace('-', '_')
             header = Parser.get_header_from_description(description, width=width)
             dictReader = _tsv.DictReader(iter(rows), fieldnames=header)
             if None in header:
