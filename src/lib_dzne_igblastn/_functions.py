@@ -5,6 +5,10 @@ import os as _os
 import shutil as _shutil
 import tempfile as _tempfile
 
+import lib_dzne_filedata as _fd
+
+import lib_dzne_igblastn._parsers as _prs
+
 
 def get_cline(
     prog,
@@ -38,7 +42,8 @@ def igdata(IGDATA, *, directory):
     _shutil.copytree(src, dest)
     _os.environ['IGDATA'] = directory
 
-
+def parse(text):
+    return _fd.TOMLData(_prs.Parser.parse_text(text))
 
 
 
